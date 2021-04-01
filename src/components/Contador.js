@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
 
 const Contador = () => {
-    return ( 
-        <h3>Mi primer componente</h3>
+
+    const [numero, setNumero] = useState(0)
+
+    const aumentar = () => {
+        console.log("click")
+        setNumero(numero+1)
+    }
+    // usando Fragment en vez de un div vacio
+    return (
+        <Fragment>
+            <h3>Mi primer componente {numero}</h3>
+            <button onClick={aumentar}>Aumentar</button>
+        </Fragment>
     );
 }
- 
+
 export default Contador;
